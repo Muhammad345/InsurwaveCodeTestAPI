@@ -8,6 +8,7 @@ namespace WeatherApi
 {
     public interface IInsurwaveWeatherInfoService
     {
-        Task<WeatherApiHttpClientResponse> GetLocalWeatherInfo(string cityName);
+        Task<WeatherApiHttpClientResponse> GetLocalWeatherInfo(string city);
+        Task<WeatherApiHttpClientResponse> GetAstronomyInfo(string city, DateTime? date);
     }
 }

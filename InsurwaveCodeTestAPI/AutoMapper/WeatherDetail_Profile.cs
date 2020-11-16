@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using CityWeatherDetail;
+using Data.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +12,21 @@ namespace InsurwaveCodeTestAPI.AutoMapper
     {
         public WeatherDetail_Profile()
         {
-            CreateMap<Category, Create_CategoryViewModel>()
-              .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Name))
-              .ForMember(dest => dest.CurrentDateTimeUtc, opt => opt.MapFrom(src => src.CreatedByDateTime))
-              .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.CreatedBy))
+            CreateMap<CityWeatherInfo, CurrentDetail>()
+              .ForPath(dest => dest.Location.Name, opt => opt.MapFrom(src => src.City))
+              .ForPath(dest => dest.Location.Region, opt => opt.MapFrom(src => src.Region))
+              .ForPath(dest => dest.Location.Country, opt => opt.MapFrom(src => src.Country))
+              .ForPath(dest => dest.Location.Localtime, opt => opt.MapFrom(src => src.LocalTime))
+              .ForPath(dest => dest.Current.TempC, opt => opt.MapFrom(src => src.Temperature))
               .ReverseMap();
+
+
+            CreateMap<CityDetailWithTempUnit, CurrentDetail>()
+            .ForPath(dest => dest.Location.Name, opt => opt.MapFrom(src => src.City))
+            .ForPath(dest => dest.Location.Region, opt => opt.MapFrom(src => src.Region))
+            .ForPath(dest => dest.Location.Country, opt => opt.MapFrom(src => src.Country))
+            .ForPath(dest => dest.Location.Localtime, opt => opt.MapFrom(src => src.LocalTime))
+            .ReverseMap();
         }
     }
 }

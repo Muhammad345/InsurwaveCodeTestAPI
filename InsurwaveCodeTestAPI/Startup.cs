@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,7 @@ namespace InsurwaveCodeTestAPI
             services.AddControllers();
             services.Configure<WeatherApiConfiguration>(Configuration.GetSection("WeatherApiConfig"));
             services.AddScoped<IInsurwaveWeatherInfoService, InsurwaveWeatherInfoService>();
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

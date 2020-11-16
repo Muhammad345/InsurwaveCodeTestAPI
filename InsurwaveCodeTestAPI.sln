@@ -3,21 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsurwaveCodeTestAPI", "InsurwaveCodeTestAPI\InsurwaveCodeTestAPI.csproj", "{E4ADC804-761C-45A2-86BD-049218D50884}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsurwaveCodeTestAPI", "InsurwaveCodeTestAPI\InsurwaveCodeTestAPI.csproj", "{E4ADC804-761C-45A2-86BD-049218D50884}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalApi_Integration", "ExternalApi_Integration", "{9ADAA49C-3CB2-4C55-B784-87CF95F4D531}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApi", "WeatherApi\WeatherApi.csproj", "{0139015B-0548-412F-BD24-85D4D0A448EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApi", "WeatherApi\WeatherApi.csproj", "{0139015B-0548-412F-BD24-85D4D0A448EB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{ADEB62C8-E6C3-4283-B179-7FD0F5F93A80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "CityWeatherDetail\Data.csproj", "{B6F756C0-61E3-4B19-A6B6-71ADBEFE991D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "CityWeatherDetail\Data.csproj", "{B6F756C0-61E3-4B19-A6B6-71ADBEFE991D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{A1E5305A-F62E-47DB-9146-E1D1C9612610}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsurwaveCodeTestAPI_UnitTests", "InsurwaveCodeTestAPI_UnitTests\InsurwaveCodeTestAPI_UnitTests.csproj", "{2B47D260-927D-4DD5-AE36-F0E444DDC35C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsurwaveCodeTestAPI_UnitTests", "InsurwaveCodeTestAPI_UnitTests\InsurwaveCodeTestAPI_UnitTests.csproj", "{2B47D260-927D-4DD5-AE36-F0E444DDC35C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsurwaveCodeTestAPI_IntegrationTests", "InsurwaveCodeTestAPI_IntegrationTests\InsurwaveCodeTestAPI_IntegrationTests.csproj", "{47D1BBD9-21F8-4DEC-B2AD-A070021A7F45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsurwaveCodeTestAPI_IntegrationTests", "InsurwaveCodeTestAPI_IntegrationTests\InsurwaveCodeTestAPI_IntegrationTests.csproj", "{47D1BBD9-21F8-4DEC-B2AD-A070021A7F45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7DB2C058-3226-4FBF-8F51-B75EA21840DE}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
