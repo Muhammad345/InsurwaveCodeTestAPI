@@ -1,8 +1,12 @@
 using Data.Constant;
+using InsurwaveCodeTestAPI;
 using InsurwaveCodeTestAPI.Controllers;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.TestHost;
 using NUnit.Framework;
 using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace InsurwaveCodeTestAPI_IntegrationTests
@@ -14,26 +18,30 @@ namespace InsurwaveCodeTestAPI_IntegrationTests
         private string _tempMeasurementUnit;
         private DateTime? date;
 
-
-        [SetUp]
-        public void Setup()
+        private readonly TestServer _server;
+        private readonly HttpClient _client;
+        public WeatherInfoControllerIntegrationTests()
         {
+            // Arrange
+            _server = new TestServer(new WebHostBuilder().UseStartup<Startup>());
+            _client = _server.CreateClient();
+
             _city = "London";
             _tempMeasurementUnit = InsurwaveConstants.TemperatureMeasurement.Celsius;
             date = DateTime.UtcNow;
-            //WeatherInfoController = new WeatherInfoController()
         }
 
         [Test]
         public async Task Get_CityWeatherInfo_Successfull()
         {
-            var actionResult = await WeatherInfoController.Get(_city, date);
+            // Act
+            var response = await _client.GetAsync("/WeatherInfo/london");
+            response.EnsureSuccessStatusCode();
 
-            var okOjbectResult = actionResult as OkObjectResult;
-            var localCityWeatherInfo = okOjbectResult.Value;
+            var responseString = await response.Content.ReadAsStringAsync();
 
-            Assert.IsNotNull(okOjbectResult);
-
+            // Assert
+           
         }
     }
 }
